@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--接口目录是点-->
+<mapper namespace="com.mapper.UserMapper">
+
+
+    <insert id="addInformation">
+        update table_user
+            <set>
+                <if test="name != null and name !=''">
+                    name=#{name},
+                </if>
+                <if test="studentId != null and studentId !=''">
+                    studentId=#{studentId},
+                </if>
+                <if test="sex != null and sex !=''">
+                    sex=#{sex},
+                </if>
+                <if test=" age !=''">
+                    age=#{age},
+                </if>
+                <if test="institute != null and institute !=''">
+                    institute=#{institute},
+                </if>
+                <if test="cls != null and cls !=''">
+                    cls=#{cls},
+                </if>
+                <if test="contact != null and contact !=''">
+                    contact=#{contact}
+                </if>
+            </set>
+        where username = #{username};
+
+
+    </insert>
+</mapper>
